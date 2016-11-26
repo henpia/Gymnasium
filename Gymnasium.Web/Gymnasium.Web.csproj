@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="NyElev.aspx" />
+    <Content Include="NytFag.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -138,6 +139,13 @@
     </Compile>
     <Compile Include="NyLærer.aspx.designer.cs">
       <DependentUpon>NyLærer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NytFag.aspx.cs">
+      <DependentUpon>NytFag.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NytFag.aspx.designer.cs">
+      <DependentUpon>NytFag.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

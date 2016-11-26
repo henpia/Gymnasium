@@ -26,7 +26,7 @@ namespace Gymnasium.Web
 
         protected void nytFagButton_Click(object sender, EventArgs e)
         {
-            // TODO: Impelement opretFagButton_Click event
+            Response.Redirect("NytFag.aspx");
         }
 
         protected void listeFagButton_Click(object sender, EventArgs e)
