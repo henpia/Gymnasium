@@ -22,6 +22,7 @@ namespace Gymnasium.Web
         protected void opretElevButton_Click(object sender, EventArgs e)
         {
             // TODO: Implement opretElevButton_Click method
+            Domain.ElevManager.OpretElev();
         }
     }
 }
