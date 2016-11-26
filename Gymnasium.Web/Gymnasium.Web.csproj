@@ -65,6 +65,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="NyElev.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -123,6 +124,13 @@
     </Compile>
     <Compile Include="LærerListe.aspx.designer.cs">
       <DependentUpon>LærerListe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NyElev.aspx.cs">
+      <DependentUpon>NyElev.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NyElev.aspx.designer.cs">
+      <DependentUpon>NyElev.aspx</DependentUpon>
     </Compile>
     <Compile Include="NyLærer.aspx.cs">
       <DependentUpon>NyLærer.aspx</DependentUpon>
