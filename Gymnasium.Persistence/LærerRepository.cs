@@ -29,7 +29,6 @@ namespace Gymnasium.Persistence
 
         public static List<DTO.LærerDTO> HentLærere()
         {
-            // TODO: Implement HentLærere(), which should return a list of lærere
             var db = new GymnasiumDbEntities();
             var lærere = db.Lærer.Where(p => p.LærerId.ToString() != "").ToList();
             var lærereDTO = convertLærereToDTO(lærere);

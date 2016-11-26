@@ -50,6 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Elev.cs">
+      <DependentUpon>GymnasiumEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ElevRepository.cs" />
+    <Compile Include="FagRepository.cs" />
     <Compile Include="LærerRepository.cs" />
     <Compile Include="GymnasiumEntities.Context.cs">
       <AutoGen>True</AutoGen>
