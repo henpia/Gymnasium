@@ -13,5 +13,15 @@ namespace Gymnasium.Web
         {
 
         }
+
+        protected void tilbageButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
+        }
+
+        protected void opretElevButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

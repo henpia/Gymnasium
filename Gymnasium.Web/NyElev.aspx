@@ -10,17 +10,31 @@
 <body>
     <form id="form1" runat="server">
     <div class="container">
-        <h1>Udby Gymnasium</h1>
-        Oprettelse af Elev
+        <div class="page-header">
+            <h1>Udby Gymnasium</h1>
+            <p class="lead">Oprettelse af Elev</p>
+        </div>
 
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <div class="form-group">
+            <label>CPR Nummer:</label>
+            <asp:TextBox CssClass="form-control" ID="cprNummerTextBox" runat="server"></asp:TextBox>
+        </div>
 
-        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        <div class="form-group">
+            <label>Navn:</label>
+            <asp:TextBox CssClass="form-control" ID="navnTextBox" runat="server"></asp:TextBox>
+        </div>
 
-        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+        <div class="form-group">
+            <label>Adresse:</label>
+            <asp:TextBox CssClass="form-control" ID="adresseTextBox" runat="server"></asp:TextBox>
+        </div>
 
-        <asp:Button ID="opretElevButton" runat="server" Text="Opret Elev" />
-        <asp:Button ID="tilbageButton" runat="server" Text="Tilbage" />
+
+        <asp:Button CssClass="btn btn-lg btn-primary" ID="opretElevButton" runat="server" Text="Opret Elev" OnClick="opretElevButton_Click" />
+        &nbsp
+        &nbsp
+        <asp:Button CssClass="btn btn-lg btn-primary" ID="tilbageButton" runat="server" Text="Tilbage" OnClick="tilbageButton_Click" />
     
     </div>
     </form>
