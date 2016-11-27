@@ -30,7 +30,6 @@
         &nbsp;
         <asp:Button CssClass="btn btn-lg btn-primary" ID="listeElevButton" runat="server" Text="Liste over Elever" OnClick="listeElevButton_Click" />
 
-
     </div>
     </form>
     <script src="Scripts/jquery-3.1.1.min.js"></script>
