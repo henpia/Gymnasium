@@ -13,5 +13,11 @@ namespace Gymnasium.Domain
             elevDTO.ElevId = Guid.NewGuid();
             Persistence.ElevRepository.OpretElev(elevDTO);
         }
+
+        public static List<DTO.ElevDTO> HentElever()
+        {
+            var elever = Persistence.ElevRepository.HentElever();
+            return elever;
+        }
     }
 }

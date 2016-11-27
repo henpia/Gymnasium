@@ -28,9 +28,28 @@ namespace Gymnasium.Persistence
             return elev;
         }
 
-        public static void HentElever()
+        public static List<DTO.ElevDTO> HentElever()
         {
-
+            var db = new GymnasiumDbEntities();
+            var elever = db.Elevs.ToList();
+            var eleverDTO = convertEleverToDTOList(elever);
+            return eleverDTO;
         }
+
+        private static List<DTO.ElevDTO> convertEleverToDTOList(List<Elev> elever)
+        {
+            var elevListDTO = new List<DTO.ElevDTO>();
+            foreach (var elev in elever)
+            {
+                var elevDTO = new DTO.ElevDTO();
+                elevDTO.ElevId = elev.ElevId;
+                elevDTO.CprNummer = elev.CprNummer;
+                elevDTO.Navn = elev.Navn;
+                elevDTO.Adresse = elev.Adresse;
+                elevListDTO.Add(elevDTO);
+            }
+            return elevListDTO;
+        }
+    
     }
 }

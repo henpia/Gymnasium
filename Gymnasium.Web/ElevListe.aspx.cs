@@ -11,7 +11,11 @@ namespace Gymnasium.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // Populate the Elev List gridview
+            // TODO: Get the data that needs to be bound to the gridview
+            var elever = Domain.ElevManager.HentElever();
+            elevListeGridView.DataSource = elever;
+            elevListeGridView.DataBind();
         }
 
         protected void tilbageButton_Click(object sender, EventArgs e)
