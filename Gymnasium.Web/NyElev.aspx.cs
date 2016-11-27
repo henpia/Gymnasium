@@ -21,8 +21,11 @@ namespace Gymnasium.Web
 
         protected void opretElevButton_Click(object sender, EventArgs e)
         {
-            // TODO: Implement opretElevButton_Click method
-            Domain.ElevManager.OpretElev();
+            var elevDTO = new DTO.ElevDTO();
+            elevDTO.CprNummer = cprNummerTextBox.Text;
+            elevDTO.Navn = navnTextBox.Text;
+            elevDTO.Adresse = adresseTextBox.Text;
+            Domain.ElevManager.OpretElev(elevDTO);
         }
     }
 }

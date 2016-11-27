@@ -8,9 +8,10 @@ namespace Gymnasium.Domain
 {
     public class ElevManager
     {
-        public static void OpretElev()
+        public static void OpretElev(DTO.ElevDTO elevDTO)
         {
-            Persistence.ElevRepository.OpretElev();
+            elevDTO.ElevId = Guid.NewGuid();
+            Persistence.ElevRepository.OpretElev(elevDTO);
         }
     }
 }
