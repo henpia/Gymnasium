@@ -65,6 +65,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ElevListe.aspx" />
     <Content Include="NyElev.aspx" />
     <Content Include="NytFag.aspx" />
     <Content Include="packages.config" />
@@ -115,6 +116,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ElevListe.aspx.cs">
+      <DependentUpon>ElevListe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ElevListe.aspx.designer.cs">
+      <DependentUpon>ElevListe.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
