@@ -54,6 +54,9 @@
       <DependentUpon>GymnasiumEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="ElevRepository.cs" />
+    <Compile Include="Fag.cs">
+      <DependentUpon>GymnasiumEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="FagRepository.cs" />
     <Compile Include="LærerRepository.cs" />
     <Compile Include="GymnasiumEntities.Context.cs">

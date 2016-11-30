@@ -14,6 +14,14 @@
           <Property Name="Navn" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Adresse" Type="nvarchar" MaxLength="250" Nullable="false" />
         </EntityType>
+        <EntityType Name="Fag">
+          <Key>
+            <PropertyRef Name="FagId" />
+          </Key>
+          <Property Name="FagId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Navn" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Beskrivelse" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
         <EntityType Name="Lærer">
           <Key>
             <PropertyRef Name="LærerId" />
@@ -26,6 +34,7 @@
         </EntityType>
         <EntityContainer Name="GymnasiumDbModelStoreContainer">
           <EntitySet Name="Elev" EntityType="Self.Elev" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fag" EntityType="Self.Fag" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Lærer" EntityType="Self.Lærer" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -45,6 +54,7 @@
         <EntityContainer Name="GymnasiumDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Lærer" EntityType="Self.Lærer" />
           <EntitySet Name="Elevs" EntityType="GymnasiumDbModel.Elev" />
+          <EntitySet Name="Fags" EntityType="GymnasiumDbModel.Fag" />
         </EntityContainer>
         <EntityType Name="Elev">
           <Key>
@@ -54,6 +64,14 @@
           <Property Name="CprNummer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Navn" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Adresse" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Fag">
+          <Key>
+            <PropertyRef Name="FagId" />
+          </Key>
+          <Property Name="FagId" Type="Guid" Nullable="false" />
+          <Property Name="Navn" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Beskrivelse" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -79,6 +97,15 @@
                 <ScalarProperty Name="Navn" ColumnName="Navn" />
                 <ScalarProperty Name="CprNummer" ColumnName="CprNummer" />
                 <ScalarProperty Name="ElevId" ColumnName="ElevId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fags">
+            <EntityTypeMapping TypeName="GymnasiumDbModel.Fag">
+              <MappingFragment StoreEntitySet="Fag">
+                <ScalarProperty Name="Beskrivelse" ColumnName="Beskrivelse" />
+                <ScalarProperty Name="Navn" ColumnName="Navn" />
+                <ScalarProperty Name="FagId" ColumnName="FagId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

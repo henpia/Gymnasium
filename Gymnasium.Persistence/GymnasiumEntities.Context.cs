@@ -27,5 +27,6 @@ namespace Gymnasium.Persistence
     
         public virtual DbSet<Lærer> Lærer { get; set; }
         public virtual DbSet<Elev> Elevs { get; set; }
+        public virtual DbSet<Fag> Fags { get; set; }
     }
 }
