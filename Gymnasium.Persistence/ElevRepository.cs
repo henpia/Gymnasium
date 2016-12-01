@@ -8,7 +8,6 @@ namespace Gymnasium.Persistence
 {
     public class ElevRepository
     {
-        // TODO: Implement the ElevRepository class in the persistence layer
         public static void OpretElev(DTO.ElevDTO elevDTO)
         {
             // Open a new connecction to the database

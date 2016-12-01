@@ -16,7 +16,7 @@ namespace Gymnasium.Web
 
         protected void opretFagButton_Click(object sender, EventArgs e)
         {
-            // TODO: Implement opretFagButton_Click method
+            Domain.FagManager.OpretFag();
         }
 
         protected void tilbageButton_Click(object sender, EventArgs e)

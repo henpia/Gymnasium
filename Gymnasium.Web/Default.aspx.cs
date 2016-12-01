@@ -41,7 +41,6 @@ namespace Gymnasium.Web
 
         protected void listeElevButton_Click(object sender, EventArgs e)
         {
-            // TODO: Impelement listeElevButton_Click event
             Response.Redirect("ElevListe.aspx");
         }
     }

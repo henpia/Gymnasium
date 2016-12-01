@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FagManager.cs" />
     <Compile Include="LærerManager.cs" />
     <Compile Include="ElevManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
