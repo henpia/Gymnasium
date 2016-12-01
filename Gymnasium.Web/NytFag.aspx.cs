@@ -16,7 +16,11 @@ namespace Gymnasium.Web
 
         protected void opretFagButton_Click(object sender, EventArgs e)
         {
-            Domain.FagManager.OpretFag();
+            var fagDTO = new DTO.FagDTO();
+            fagDTO.FagId = Guid.NewGuid();
+            fagDTO.Navn = "Sløjd";
+            fagDTO.Beskrivelse = "Dette fag skal fremme elevernes håndværksmæssige færdigheder.";
+            Domain.FagManager.OpretFag(fagDTO);
         }
 
         protected void tilbageButton_Click(object sender, EventArgs e)

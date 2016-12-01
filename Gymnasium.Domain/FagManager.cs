@@ -8,9 +8,9 @@ namespace Gymnasium.Domain
 {
     public class FagManager
     {
-        public static void OpretFag()
+        public static void OpretFag(DTO.FagDTO fagDTO)
         {
-            Persistence.FagRepository.OpretFag();
+            Persistence.FagRepository.OpretFag(fagDTO);
         }
     }
 }

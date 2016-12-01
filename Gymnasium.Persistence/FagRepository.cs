@@ -8,23 +8,25 @@ namespace Gymnasium.Persistence
 {
     public class FagRepository
     {
-        public static void OpretFag()
+        public static void OpretFag(DTO.FagDTO fagDTO)
         {
             // TODO: Implement the OpretFag method in the persistense layer
             var db = new GymnasiumDbEntities();
-            var fag = convertFagToEntity();
+            var fag = convertFagToEntity(fagDTO);
 
             db.Fags.Add(fag);
             db.SaveChanges();
         }
 
-        private static Fag convertFagToEntity()
+        private static Fag convertFagToEntity(DTO.FagDTO fagDTO)
         {
             var fag = new Fag();
 
-            fag.FagId = Guid.NewGuid();
-            fag.Navn = "Matematik";
-            fag.Beskrivelse = "Dette fag skal fremme elevernes matematiske færdigheder.";
+            fag.FagId = fagDTO.FagId;
+            fag.Navn = fagDTO.Navn;
+            fag.Beskrivelse = fagDTO.Beskrivelse;
+
+
             return fag;
         }
 
