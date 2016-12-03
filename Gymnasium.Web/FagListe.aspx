@@ -21,7 +21,7 @@
                 <asp:BoundField DataField="Beskrivelse" HeaderText="Beskrivelse" />
             </Columns>
         </asp:GridView>
-
+        <p>&nbsp</p>
         <asp:Button CssClass="btn btn-lg btn-primary" ID="tilbageButton" runat="server" Text="Tilbage" OnClick="tilbageButton_Click" />
     </div>
     </form>
