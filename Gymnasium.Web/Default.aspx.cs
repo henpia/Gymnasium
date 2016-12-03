@@ -31,7 +31,7 @@ namespace Gymnasium.Web
 
         protected void listeFagButton_Click(object sender, EventArgs e)
         {
-            // TODO: Impelement listeFagButton_Click event
+            Response.Redirect("FagListe.aspx");
         }
 
         protected void nyElevButton_Click(object sender, EventArgs e)

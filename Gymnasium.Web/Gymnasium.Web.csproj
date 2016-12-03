@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ElevListe.aspx" />
+    <Content Include="FagListe.aspx" />
     <Content Include="NyElev.aspx" />
     <Content Include="NytFag.aspx" />
     <Content Include="packages.config" />
@@ -123,6 +124,13 @@
     </Compile>
     <Compile Include="ElevListe.aspx.designer.cs">
       <DependentUpon>ElevListe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FagListe.aspx.cs">
+      <DependentUpon>FagListe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FagListe.aspx.designer.cs">
+      <DependentUpon>FagListe.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

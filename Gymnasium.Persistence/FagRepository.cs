@@ -10,10 +10,8 @@ namespace Gymnasium.Persistence
     {
         public static void OpretFag(DTO.FagDTO fagDTO)
         {
-            // TODO: Implement the OpretFag method in the persistense layer
             var db = new GymnasiumDbEntities();
             var fag = convertFagToEntity(fagDTO);
-
             db.Fags.Add(fag);
             db.SaveChanges();
         }
@@ -21,18 +19,38 @@ namespace Gymnasium.Persistence
         private static Fag convertFagToEntity(DTO.FagDTO fagDTO)
         {
             var fag = new Fag();
-
             fag.FagId = fagDTO.FagId;
             fag.Navn = fagDTO.Navn;
             fag.Beskrivelse = fagDTO.Beskrivelse;
-
-
             return fag;
         }
 
-        public static void HentFag()
+        public static List<DTO.FagDTO> HentFag()
         {
-            // TODO: Implement the HentFag method in the persistence layer
+            // open database
+            var db = new GymnasiumDbEntities();
+            // get all the records in the database and put it in a list
+            List<Fag> fagListe = db.Fags.ToList();
+            // convert the list of fag to a list of DTO's
+            List<DTO.FagDTO> listFagDTO = convertFagListeToDTO(fagListe);
+            // return the list of Fag DTO's to caller
+            return listFagDTO;
         }
+
+        private static List<DTO.FagDTO> convertFagListeToDTO(List<Fag> fagListe)
+        {
+            List<DTO.FagDTO> fagListeDTO = new List<DTO.FagDTO>();
+            foreach (var fag in fagListe)
+            {
+                var fagDTO = new DTO.FagDTO();
+                fagDTO.FagId = fag.FagId;
+                fagDTO.Navn = fag.Navn;
+                fagDTO.Beskrivelse = fag.Beskrivelse;
+                fagListeDTO.Add(fagDTO);
+            }
+            return fagListeDTO;
+        }
+
+
     }
 }
