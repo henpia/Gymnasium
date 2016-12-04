@@ -30,7 +30,6 @@
           <Property Name="CprNummer" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Navn" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Adresse" Type="nvarchar" MaxLength="250" Nullable="false" />
-          <Property Name="FagId" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <EntityContainer Name="GymnasiumDbModelStoreContainer">
           <EntitySet Name="Elev" EntityType="Self.Elev" Schema="dbo" store:Type="Tables" />
@@ -49,7 +48,6 @@
           <Property Name="CprNummer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Navn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Adresse" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="FagId" Type="Guid" Nullable="false" />
         </EntityType>
         <EntityContainer Name="GymnasiumDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Lærer" EntityType="Self.Lærer" />
@@ -86,7 +84,6 @@
                 <ScalarProperty Name="CprNummer" ColumnName="CprNummer" />
                 <ScalarProperty Name="Navn" ColumnName="Navn" />
                 <ScalarProperty Name="Adresse" ColumnName="Adresse" />
-                <ScalarProperty Name="FagId" ColumnName="FagId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

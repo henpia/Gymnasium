@@ -11,8 +11,6 @@ namespace Gymnasium.Domain
         public static void OpretLærer(DTO.LærerDTO lærerDTO)
         {
             lærerDTO.LærerId = Guid.NewGuid();
-            // TODO: Work towards removing this field from the Lærer table.
-            lærerDTO.FagId = Guid.NewGuid();
             Persistence.LærerRepository.OpretLærer(lærerDTO);
         }
 

@@ -18,6 +18,5 @@ namespace Gymnasium.Persistence
         public string CprNummer { get; set; }
         public string Navn { get; set; }
         public string Adresse { get; set; }
-        public System.Guid FagId { get; set; }
     }
 }

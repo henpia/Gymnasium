@@ -23,7 +23,6 @@ namespace Gymnasium.Persistence
             lærer.CprNummer = lærerDTO.CprNummer;
             lærer.Navn = lærerDTO.Navn;
             lærer.Adresse = lærerDTO.Adresse;
-            lærer.FagId = lærerDTO.FagId;
             return lærer;
         }
 
@@ -45,7 +44,6 @@ namespace Gymnasium.Persistence
                 lærerDTO.CprNummer = lærer.CprNummer;
                 lærerDTO.Navn = lærer.Navn;
                 lærerDTO.Adresse = lærer.Adresse;
-                lærerDTO.FagId = lærer.FagId;
                 lærereDTO.Add(lærerDTO);
             }
             return lærereDTO;
