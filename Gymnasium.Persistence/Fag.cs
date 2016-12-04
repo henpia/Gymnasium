@@ -18,5 +18,8 @@ namespace Gymnasium.Persistence
         public string Navn { get; set; }
         public string Beskrivelse { get; set; }
         public bool Deleted { get; set; }
+        public System.Guid LærerLærerId { get; set; }
+    
+        public virtual Lærer Lærer { get; set; }
     }
 }
