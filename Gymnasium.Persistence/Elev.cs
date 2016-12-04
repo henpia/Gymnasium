@@ -18,6 +18,5 @@ namespace Gymnasium.Persistence
         public string CprNummer { get; set; }
         public string Navn { get; set; }
         public string Adresse { get; set; }
-        public bool Deleted { get; set; }
     }
 }

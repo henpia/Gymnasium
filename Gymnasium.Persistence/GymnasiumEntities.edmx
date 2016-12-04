@@ -4,59 +4,39 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="GymnasiumDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="GymnasiumDbModelStoreContainer">
-    <EntitySet Name="Lærer" EntityType="GymnasiumDbModel.Store.Lærer" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Elevs" EntityType="GymnasiumDbModel.Store.Elevs" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Fags" EntityType="GymnasiumDbModel.Store.Fags" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="LærerFag" Association="GymnasiumDbModel.Store.LærerFag">
-      <End Role="Lærer" EntitySet="Lærer" />
-      <End Role="Fag" EntitySet="Fags" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="Lærer">
-    <Key>
-      <PropertyRef Name="LærerId" />
-    </Key>
-    <Property Name="LærerId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="CprNummer" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="Navn" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="Adresse" Type="nvarchar" Nullable="false" MaxLength="250" />
-    <Property Name="Deleted" Type="bit" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Elevs">
-    <Key>
-      <PropertyRef Name="ElevId" />
-    </Key>
-    <Property Name="ElevId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="CprNummer" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="Navn" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="Adresse" Type="nvarchar" Nullable="false" MaxLength="250" />
-    <Property Name="Deleted" Type="bit" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Fags">
-    <Key>
-      <PropertyRef Name="FagId" />
-    </Key>
-    <Property Name="FagId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Navn" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="Beskrivelse" Type="nvarchar" Nullable="false" MaxLength="500" />
-    <Property Name="Deleted" Type="bit" Nullable="false" />
-    <Property Name="LærerLærerId" Type="uniqueidentifier" Nullable="false" />
-  </EntityType>
-  <Association Name="LærerFag">
-    <End Role="Lærer" Type="GymnasiumDbModel.Store.Lærer" Multiplicity="1" />
-    <End Role="Fag" Type="GymnasiumDbModel.Store.Fags" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Lærer">
-        <PropertyRef Name="LærerId" />
-      </Principal>
-      <Dependent Role="Fag">
-        <PropertyRef Name="LærerLærerId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-</Schema></edmx:StorageModels>
+    <Schema Namespace="GymnasiumDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Elev">
+          <Key>
+            <PropertyRef Name="ElevId" />
+          </Key>
+          <Property Name="ElevId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CprNummer" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Navn" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adresse" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fag">
+          <Key>
+            <PropertyRef Name="FagId" />
+          </Key>
+          <Property Name="FagId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Navn" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Beskrivelse" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lærer">
+          <Key>
+            <PropertyRef Name="LærerId" />
+          </Key>
+          <Property Name="LærerId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CprNummer" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Navn" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adresse" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="GymnasiumDbModelStoreContainer">
+          <EntitySet Name="Elev" EntityType="Self.Elev" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fag" EntityType="Self.Fag" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lærer" EntityType="Self.Lærer" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GymnasiumDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -68,17 +48,11 @@
           <Property Name="CprNummer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Navn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Adresse" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Deleted" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Fags" Relationship="GymnasiumDbModel.LærerFag" FromRole="Lærer" ToRole="Fag" />
         </EntityType>
         <EntityContainer Name="GymnasiumDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Lærer" EntityType="Self.Lærer" />
           <EntitySet Name="Elevs" EntityType="GymnasiumDbModel.Elev" />
           <EntitySet Name="Fags" EntityType="GymnasiumDbModel.Fag" />
-          <AssociationSet Name="LærerFag" Association="GymnasiumDbModel.LærerFag">
-            <End Role="Lærer" EntitySet="Lærer" />
-            <End Role="Fag" EntitySet="Fags" />
-          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Elev">
           <Key>
@@ -88,7 +62,6 @@
           <Property Name="CprNummer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Navn" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Adresse" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Deleted" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Fag">
           <Key>
@@ -97,63 +70,45 @@
           <Property Name="FagId" Type="Guid" Nullable="false" />
           <Property Name="Navn" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Beskrivelse" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="Deleted" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Lærer" Relationship="GymnasiumDbModel.LærerFag" FromRole="Fag" ToRole="Lærer" />
-          <Property Name="LærerLærerId" Type="Guid" Nullable="false" />
         </EntityType>
-        <Association Name="LærerFag">
-          <End Type="GymnasiumDbModel.Lærer" Role="Lærer" Multiplicity="1" />
-          <End Type="GymnasiumDbModel.Fag" Role="Fag" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Lærer">
-              <PropertyRef Name="LærerId" />
-            </Principal>
-            <Dependent Role="Fag">
-              <PropertyRef Name="LærerLærerId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="GymnasiumDbModelStoreContainer" CdmEntityContainer="GymnasiumDbEntities">
-    <EntitySetMapping Name="Lærer">
-      <EntityTypeMapping TypeName="IsTypeOf(GymnasiumDbModel.Lærer)">
-        <MappingFragment StoreEntitySet="Lærer">
-          <ScalarProperty Name="LærerId" ColumnName="LærerId" />
-          <ScalarProperty Name="CprNummer" ColumnName="CprNummer" />
-          <ScalarProperty Name="Navn" ColumnName="Navn" />
-          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
-          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Elevs">
-      <EntityTypeMapping TypeName="IsTypeOf(GymnasiumDbModel.Elev)">
-        <MappingFragment StoreEntitySet="Elevs">
-          <ScalarProperty Name="ElevId" ColumnName="ElevId" />
-          <ScalarProperty Name="CprNummer" ColumnName="CprNummer" />
-          <ScalarProperty Name="Navn" ColumnName="Navn" />
-          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
-          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Fags">
-      <EntityTypeMapping TypeName="IsTypeOf(GymnasiumDbModel.Fag)">
-        <MappingFragment StoreEntitySet="Fags">
-          <ScalarProperty Name="FagId" ColumnName="FagId" />
-          <ScalarProperty Name="Navn" ColumnName="Navn" />
-          <ScalarProperty Name="Beskrivelse" ColumnName="Beskrivelse" />
-          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
-          <ScalarProperty Name="LærerLærerId" ColumnName="LærerLærerId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-  </EntityContainerMapping>
-</Mapping></edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GymnasiumDbModelStoreContainer" CdmEntityContainer="GymnasiumDbEntities">
+          <EntitySetMapping Name="Lærer">
+            <EntityTypeMapping TypeName="GymnasiumDbModel.Lærer">
+              <MappingFragment StoreEntitySet="Lærer">
+                <ScalarProperty Name="LærerId" ColumnName="LærerId" />
+                <ScalarProperty Name="CprNummer" ColumnName="CprNummer" />
+                <ScalarProperty Name="Navn" ColumnName="Navn" />
+                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Elevs">
+            <EntityTypeMapping TypeName="GymnasiumDbModel.Elev">
+              <MappingFragment StoreEntitySet="Elev">
+                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+                <ScalarProperty Name="Navn" ColumnName="Navn" />
+                <ScalarProperty Name="CprNummer" ColumnName="CprNummer" />
+                <ScalarProperty Name="ElevId" ColumnName="ElevId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fags">
+            <EntityTypeMapping TypeName="GymnasiumDbModel.Fag">
+              <MappingFragment StoreEntitySet="Fag">
+                <ScalarProperty Name="Beskrivelse" ColumnName="Beskrivelse" />
+                <ScalarProperty Name="Navn" ColumnName="Navn" />
+                <ScalarProperty Name="FagId" ColumnName="FagId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -167,7 +122,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
