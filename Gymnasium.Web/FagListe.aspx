@@ -15,10 +15,11 @@
             <p class="lead">Liste over Fag</p>
         </div>
 
-        <asp:GridView ID="fagListeGridView" runat="server" AutoGenerateColumns="false">
+        <asp:GridView ID="fagListeGridView" runat="server" AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField DataField="Navn" HeaderText="Navn" />
                 <asp:BoundField DataField="Beskrivelse" HeaderText="Beskrivelse" />
+                <asp:ButtonField Text="Slet" />
             </Columns>
         </asp:GridView>
         <p>&nbsp</p>

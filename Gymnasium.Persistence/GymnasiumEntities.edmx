@@ -13,6 +13,7 @@
           <Property Name="CprNummer" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Navn" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Adresse" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Fag">
           <Key>
@@ -21,6 +22,7 @@
           <Property Name="FagId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Navn" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Beskrivelse" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Lærer">
           <Key>
@@ -30,6 +32,7 @@
           <Property Name="CprNummer" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Navn" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Adresse" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityContainer Name="GymnasiumDbModelStoreContainer">
           <EntitySet Name="Elev" EntityType="Self.Elev" Schema="dbo" store:Type="Tables" />
@@ -48,6 +51,7 @@
           <Property Name="CprNummer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Navn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Adresse" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityContainer Name="GymnasiumDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Lærer" EntityType="Self.Lærer" />
@@ -62,6 +66,7 @@
           <Property Name="CprNummer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Navn" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Adresse" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Fag">
           <Key>
@@ -70,6 +75,7 @@
           <Property Name="FagId" Type="Guid" Nullable="false" />
           <Property Name="Navn" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Beskrivelse" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -80,6 +86,7 @@
           <EntitySetMapping Name="Lærer">
             <EntityTypeMapping TypeName="GymnasiumDbModel.Lærer">
               <MappingFragment StoreEntitySet="Lærer">
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
                 <ScalarProperty Name="LærerId" ColumnName="LærerId" />
                 <ScalarProperty Name="CprNummer" ColumnName="CprNummer" />
                 <ScalarProperty Name="Navn" ColumnName="Navn" />
@@ -90,6 +97,7 @@
           <EntitySetMapping Name="Elevs">
             <EntityTypeMapping TypeName="GymnasiumDbModel.Elev">
               <MappingFragment StoreEntitySet="Elev">
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
                 <ScalarProperty Name="Adresse" ColumnName="Adresse" />
                 <ScalarProperty Name="Navn" ColumnName="Navn" />
                 <ScalarProperty Name="CprNummer" ColumnName="CprNummer" />
@@ -100,6 +108,7 @@
           <EntitySetMapping Name="Fags">
             <EntityTypeMapping TypeName="GymnasiumDbModel.Fag">
               <MappingFragment StoreEntitySet="Fag">
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
                 <ScalarProperty Name="Beskrivelse" ColumnName="Beskrivelse" />
                 <ScalarProperty Name="Navn" ColumnName="Navn" />
                 <ScalarProperty Name="FagId" ColumnName="FagId" />
