@@ -14,7 +14,7 @@ namespace Gymnasium.Persistence
     
     public partial class Fag
     {
-        public System.Guid FagId { get; set; }
+        public int FagId { get; set; }
         public string Navn { get; set; }
         public string Beskrivelse { get; set; }
         public bool Deleted { get; set; }

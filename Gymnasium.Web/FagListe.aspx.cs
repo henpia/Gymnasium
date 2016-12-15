@@ -11,17 +11,52 @@ namespace Gymnasium.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Get a list of Fag
-            List<DTO.FagDTO> fagDTO = Domain.FagManager.HentFag();
-            // Set the Gridview source to be the list of fag
-            fagListeGridView.DataSource = fagDTO;
-            // Bind the source to the Gridview
-            fagListeGridView.DataBind();
+            refreshGridView();
         }
 
         protected void tilbageButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("Default.aspx");
         }
+
+        protected void fagListeGridView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void fagListeGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            // TODO: Implement the procedure for deleting af Fag
+            // Determine which row is clicked
+            int index = Convert.ToInt32(e.CommandArgument);
+            // Create a new GridviewRow object and assign the clicked row to the row property
+            GridViewRow row = fagListeGridView.Rows[index];
+            // Return the value of cell 0 (the first cell) from the row found above.  Cell 0 is the fagId. Convert it to a string.
+            var value = row.Cells[0].Text.ToString();
+            // Determine which Fag is displayed on the clicked row (fagid of clicked row)
+            var fagId = int.Parse(value);
+            // delete the found fagid
+            Domain.FagManager.SletFag(fagId);
+
+            // Refresh page / refreshGridView
+            refreshGridView();
+        }
+
+        private void refreshGridView()
+        {
+            // Get a list of Fag
+            List<DTO.FagDTO> fagDTO = Domain.FagManager.HentFag();
+            // Set the Gridview source to be the list of fag
+            fagListeGridView.DataSource = fagDTO;
+            // Bind the source to the Gridview
+            fagListeGridView.DataBind();            
+        }
+
+        protected void slettedeFagButton_Click(object sender, EventArgs e)
+        {
+            // TODO: Implement the list/page of slettede fag
+        }
+
+        
     }
 }

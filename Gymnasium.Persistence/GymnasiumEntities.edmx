@@ -19,7 +19,7 @@
           <Key>
             <PropertyRef Name="FagId" />
           </Key>
-          <Property Name="FagId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FagId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Navn" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Beskrivelse" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="Deleted" Type="bit" Nullable="false" />
@@ -72,7 +72,7 @@
           <Key>
             <PropertyRef Name="FagId" />
           </Key>
-          <Property Name="FagId" Type="Guid" Nullable="false" />
+          <Property Name="FagId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Navn" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Beskrivelse" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="Deleted" Type="Boolean" Nullable="false" />

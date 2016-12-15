@@ -10,7 +10,7 @@ namespace Gymnasium.Domain
     {
         public static void OpretFag(DTO.FagDTO fagDTO)
         {
-            fagDTO.FagId = Guid.NewGuid();
+            //fagDTO.FagId = Guid.NewGuid();
             Persistence.FagRepository.OpretFag(fagDTO);
         }
 
@@ -18,6 +18,11 @@ namespace Gymnasium.Domain
         {
             List<DTO.FagDTO> fagDTO = Persistence.FagRepository.HentFag();
             return fagDTO;
+        }
+
+        public static void SletFag(int fagId)
+        {
+            Persistence.FagRepository.SletFag(fagId);
         }
     }
 }

@@ -58,6 +58,9 @@
       <DependentUpon>GymnasiumEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="FagRepository.cs" />
+    <Compile Include="Lærer.cs">
+      <DependentUpon>GymnasiumEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="LærerRepository.cs" />
     <Compile Include="GymnasiumEntities.Context.cs">
       <AutoGen>True</AutoGen>
@@ -73,9 +76,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GymnasiumEntities.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Lærer.cs">
-      <DependentUpon>GymnasiumEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -29,8 +29,8 @@ namespace Gymnasium.Persistence
         {
             // open database
             var db = new GymnasiumDbEntities();
-            // get all the records in the database and put it in a list
-            List<Fag> fagListe = db.Fags.ToList();
+            // get all the records in the database that is not deleted and put it in a list
+            List<Fag> fagListe = db.Fags.Where(p => p.Deleted == false).ToList();
             // convert the list of fag to a list of DTO's
             List<DTO.FagDTO> listFagDTO = convertFagListeToDTO(fagListe);
             // return the list of Fag DTO's to caller
@@ -52,5 +52,13 @@ namespace Gymnasium.Persistence
         }
 
 
+
+        public static void SletFag(int fagId)
+        {
+            var context = new GymnasiumDbEntities();
+            var fag = context.Fags.FirstOrDefault(p => p.FagId == fagId);
+            fag.Deleted = true;
+            context.SaveChanges();
+        }
     }
 }

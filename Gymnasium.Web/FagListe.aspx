@@ -15,15 +15,18 @@
             <p class="lead">Liste over Fag</p>
         </div>
 
-        <asp:GridView ID="fagListeGridView" runat="server" AutoGenerateColumns="False">
+        <asp:GridView ID="fagListeGridView" runat="server" AutoGenerateColumns="False" OnRowCommand="fagListeGridView_RowCommand" OnSelectedIndexChanged="fagListeGridView_SelectedIndexChanged" >
             <Columns>
+                <asp:BoundField DataField="fagId" HeaderText="Fag Id" />
                 <asp:BoundField DataField="Navn" HeaderText="Navn" />
                 <asp:BoundField DataField="Beskrivelse" HeaderText="Beskrivelse" />
                 <asp:ButtonField Text="Slet" />
             </Columns>
         </asp:GridView>
-        <p>&nbsp</p>
+        <p>&nbsp;</p>
         <asp:Button CssClass="btn btn-lg btn-primary" ID="tilbageButton" runat="server" Text="Tilbage" OnClick="tilbageButton_Click" />
+        &nbsp;
+        <asp:Button CssClass="btn btn-lg btn-primary" ID="slettedeFagButton" runat="server" Text="Slettede Fag" OnClick="slettedeFagButton_Click" />
     </div>
     </form>
     <script src="Scripts/jquery-3.1.1.min.js"></script>
