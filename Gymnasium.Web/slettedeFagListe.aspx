@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FagListe.aspx.cs" Inherits="Gymnasium.Web.FagListe" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="slettedeFagListe.aspx.cs" Inherits="Gymnasium.Web.slettedeFagListe" %>
 
 <!DOCTYPE html>
 
@@ -12,21 +12,20 @@
     <div class="container">
         <div class="page-header">
             <h1>Udby Gymnasium</h1>
-            <p class="lead">Liste over Fag</p>
+            <div class="lead">Liste over Slettede Fag</div> 
         </div>
 
-        <asp:GridView CssClass="table table-hover table-bordered table-condensed" ID="fagListeGridView" runat="server" AutoGenerateColumns="False" OnRowCommand="fagListeGridView_RowCommand" OnSelectedIndexChanged="fagListeGridView_SelectedIndexChanged" >
+        <asp:GridView ID="slettedeFagGridView" runat="server" AutoGenerateColumns="False" OnRowCommand="slettedeFagGridView_RowCommand">
             <Columns>
-                <asp:BoundField DataField="fagId" HeaderText="Fag Id" />
+                <asp:BoundField DataField="FagId" HeaderText="Fag Id" />
                 <asp:BoundField DataField="Navn" HeaderText="Navn" />
                 <asp:BoundField DataField="Beskrivelse" HeaderText="Beskrivelse" />
-                <asp:ButtonField Text="Slet" />
+                <asp:ButtonField Text="Slet Permanent" />
             </Columns>
         </asp:GridView>
-        <p>&nbsp;</p>
+
         <asp:Button CssClass="btn btn-lg btn-primary" ID="tilbageButton" runat="server" Text="Tilbage" OnClick="tilbageButton_Click" />
-        &nbsp;
-        <asp:Button CssClass="btn btn-lg btn-primary" ID="slettedeFagButton" runat="server" Text="Slettede Fag" OnClick="slettedeFagButton_Click" />
+    
     </div>
     </form>
     <script src="Scripts/jquery-3.1.1.min.js"></script>

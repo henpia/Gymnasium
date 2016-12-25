@@ -54,6 +54,7 @@ namespace Gymnasium.Web
 
         protected void slettedeFagButton_Click(object sender, EventArgs e)
         {
+            Response.Redirect("slettedeFagListe.aspx");
             // TODO: Implement the list/page of slettede fag
         }
 
