@@ -15,7 +15,9 @@ namespace Gymnasium.Web
             // 1. get a list of Fag (deleted) to display
             var slettedeFagListe = Domain.FagManager.HentSlettedeFag();
             // 2. set the source of the gridview to the list of fag from above
+            slettedeFagGridView.DataSource = slettedeFagListe;
             // 3. bind the source to the gridview
+            slettedeFagGridView.DataBind();
         }
 
         protected void tilbageButton_Click(object sender, EventArgs e)

@@ -51,8 +51,6 @@ namespace Gymnasium.Persistence
             return fagListeDTO;
         }
 
-
-
         public static void SletFag(int fagId)
         {
             var context = new GymnasiumDbEntities();
@@ -60,5 +58,14 @@ namespace Gymnasium.Persistence
             fag.Deleted = true;
             context.SaveChanges();
         }
+
+        public static List<DTO.FagDTO> HentSlettedeFag()
+        {
+            var context = new GymnasiumDbEntities();
+            var slettedeFag = context.Fags.Where(p => p.Deleted == true).ToList();
+            List<DTO.FagDTO> slettedeFagDTO = convertFagListeToDTO(slettedeFag);
+            return slettedeFagDTO;
+        }
+
     }
 }

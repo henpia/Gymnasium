@@ -15,7 +15,7 @@
             <p class="lead">Liste over Fag</p>
         </div>
 
-        <asp:GridView CssClass="table table-hover table-bordered table-condensed" ID="fagListeGridView" runat="server" AutoGenerateColumns="False" OnRowCommand="fagListeGridView_RowCommand" OnSelectedIndexChanged="fagListeGridView_SelectedIndexChanged" >
+        <asp:GridView CssClass="table table-hover table-bordered table-condensed table-responsive" ID="fagListeGridView" runat="server" AutoGenerateColumns="False" OnRowCommand="fagListeGridView_RowCommand" OnSelectedIndexChanged="fagListeGridView_SelectedIndexChanged" >
             <Columns>
                 <asp:BoundField DataField="fagId" HeaderText="Fag Id" />
                 <asp:BoundField DataField="Navn" HeaderText="Navn" />

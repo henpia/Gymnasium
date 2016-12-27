@@ -25,9 +25,9 @@ namespace Gymnasium.Domain
             Persistence.FagRepository.SletFag(fagId);
         }
 
-        public static object HentSlettedeFag()
+        public static List<DTO.FagDTO> HentSlettedeFag()
         {
-            throw new NotImplementedException();
+            return Persistence.FagRepository.HentSlettedeFag();
         }
     }
 }
