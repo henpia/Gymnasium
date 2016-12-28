@@ -15,7 +15,7 @@
             <p class="lead">Liste over Elever</p>
         </div>
 
-        <asp:GridView ID="elevListeGridView" runat="server" AutoGenerateColumns="false">
+        <asp:GridView CssClass="table table-bordered table-condensed table-hover table-responsive" ID="elevListeGridView" runat="server" AutoGenerateColumns="false">
             <Columns>
                 <asp:BoundField DataField="CprNummer" HeaderText="CPR Nummer" />
                 <asp:BoundField DataField="Navn" HeaderText="Navn" />

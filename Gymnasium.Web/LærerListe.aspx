@@ -14,7 +14,7 @@
         <h1>Udby Gymnasium</h1>
         <p class="lead">Liste over Lærere</p>
         </div>
-        <asp:GridView ID="lærerListeGridView" runat="server" AutoGenerateColumns="False">
+        <asp:GridView CssClass="table table-bordered table-condensed table-hover table-responsive" ID="lærerListeGridView" runat="server" AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField DataField="CprNummer" HeaderText="Cpr Nummer" />
                 <asp:BoundField DataField="Navn" HeaderText="Navn" />
