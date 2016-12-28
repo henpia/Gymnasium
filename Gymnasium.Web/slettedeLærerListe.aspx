@@ -10,8 +10,22 @@
 <body>
     <form id="form1" runat="server">
     <div class="container">
-        <h1>Udby Gymnasium</h1>
-        Liste over Slettede Lærere
+        <div class="page-header">
+            <h1>Udby Gymnasium</h1>
+            <p class="lead">Liste over Slettede Lærere</p>
+        </div>
+
+        <asp:GridView CssClass="table table-bordered table-condensed table-hover table-responsive" ID="slettedeLærereGridView" runat="server" AutoGenerateColumns="false">
+            <Columns>
+                <asp:BoundField DataField="LærerId" HeaderText="Lærer ID" />
+                <asp:BoundField DataField="Cprnummer" HeaderText="CPR Nummer" />
+                <asp:BoundField DataField="Navn" HeaderText="Navn" />
+                <asp:BoundField DataField="Adresse" HeaderText="Adresse" />
+            </Columns>
+        </asp:GridView>
+
+        <p>&nbsp;</p>
+        <asp:Button CssClass="btn btn-lg btn-primary" ID="tilbageButton" runat="server" Text="Tilbage" OnClick="tilbageButton_Click" />
     
     </div>
     </form>

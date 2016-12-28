@@ -25,7 +25,8 @@
         </asp:GridView>
         <p>&nbsp;</p>
         <asp:Button CssClass="btn btn-lg btn-primary" ID="tilbageButton" runat="server" Text="Tilbage" OnClick="tilbageButton_Click" />
-        <asp:Button CssClass="btn btn-lg btn-primary" ID="slettedeLærerButton" runat="server" Text="Slettede Fag" OnClick="slettedeLærerButton_Click" />
+        &nbsp;
+        <asp:Button CssClass="btn btn-lg btn-primary" ID="slettedeLærerButton" runat="server" Text="Slettede Lærere" OnClick="slettedeLærerButton_Click" />
     </div>
     </form>
     <script src="Scripts/jquery-3.1.1.min.js"></script>

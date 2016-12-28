@@ -59,5 +59,14 @@ namespace Gymnasium.Persistence
             // 3. Save the changes
             context.SaveChanges();
         }
+
+        public static List<DTO.LærerDTO> HentSlettedeLærere()
+        {
+            // TODO: Implement retrieval of the list of deleted Lærere
+            var context = new GymnasiumDbEntities();
+            var slettedeLærere = context.Lærer.Where(p => p.Deleted == true).ToList();
+            var slettedeLærereDTO = convertLærereToDTO(slettedeLærere);
+            return slettedeLærereDTO;
+        }
     }
 }

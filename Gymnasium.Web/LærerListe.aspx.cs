@@ -28,9 +28,10 @@ namespace Gymnasium.Web
 
         protected void lærerListeGridView_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            // TODO: Implement the delete functionality for a lærer/teacher
-            // Change the below hardcode to find the guid of the clicked row.
-            Guid lærerId = Guid.Parse("84aad1a8-03e2-4789-a0f2-ec3f81b32445");
+            var index = Convert.ToInt32(e.CommandArgument);
+            GridViewRow row = lærerListeGridView.Rows[index];
+            var value = row.Cells[0].Text.ToString();
+            var lærerId = Guid.Parse(value);
             Domain.LærerManager.SletLærer(lærerId);
             refreshGridView();
         }

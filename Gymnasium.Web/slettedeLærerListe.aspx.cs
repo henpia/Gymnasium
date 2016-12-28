@@ -11,7 +11,19 @@ namespace Gymnasium.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            refreshGridView();
+        }
 
+        private void refreshGridView()
+        {
+            List<DTO.LærerDTO> slettedeLærere = Domain.LærerManager.HentSlettedeLærere();
+            slettedeLærereGridView.DataSource = slettedeLærere;
+            slettedeLærereGridView.DataBind();
+        }
+
+        protected void tilbageButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LærerListe.aspx");
         }
     }
 }
