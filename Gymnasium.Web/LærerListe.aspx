@@ -19,6 +19,7 @@
                 <asp:BoundField DataField="CprNummer" HeaderText="Cpr Nummer" />
                 <asp:BoundField DataField="Navn" HeaderText="Navn" />
                 <asp:BoundField DataField="Adresse" HeaderText="Adresse" />
+                <asp:ButtonField Text="Slet" />
             </Columns>
         </asp:GridView>
         <p>&nbsp;</p>
