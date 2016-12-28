@@ -26,7 +26,6 @@ namespace Gymnasium.Web
 
         protected void fagListeGridView_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            // TODO: Implement the procedure for deleting af Fag
             // Determine which row is clicked
             int index = Convert.ToInt32(e.CommandArgument);
             // Create a new GridviewRow object and assign the clicked row to the row property

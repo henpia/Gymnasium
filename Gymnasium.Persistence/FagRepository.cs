@@ -67,5 +67,13 @@ namespace Gymnasium.Persistence
             return slettedeFagDTO;
         }
 
+
+        public static void SletFagPermanent(int fagId)
+        {
+            var context = new GymnasiumDbEntities();
+            var fagToDelete = context.Fags.Where(p => p.FagId==fagId).First();
+            context.Fags.Remove(fagToDelete);
+            context.SaveChanges();
+        }
     }
 }

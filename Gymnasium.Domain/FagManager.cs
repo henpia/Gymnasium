@@ -29,5 +29,11 @@ namespace Gymnasium.Domain
         {
             return Persistence.FagRepository.HentSlettedeFag();
         }
+
+
+        public static void SletFagPermanent(int fagId)
+        {
+            Persistence.FagRepository.SletFagPermanent(fagId);
+        }
     }
 }
