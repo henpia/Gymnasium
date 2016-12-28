@@ -21,5 +21,10 @@ namespace Gymnasium.Web
         {
             Response.Redirect("Default.aspx");
         }
+
+        protected void elevListeGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            // TODO: Implement the slet/delete funtionality for Elev
+        }
     }
 }

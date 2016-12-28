@@ -29,7 +29,7 @@ namespace Gymnasium.Persistence
         public static List<DTO.LærerDTO> HentLærere()
         {
             var db = new GymnasiumDbEntities();
-            var lærere = db.Lærer.Where(p => p.LærerId.ToString() != "").ToList();
+            var lærere = db.Lærer.Where(p => p.Deleted == false).ToList();
             var lærereDTO = convertLærereToDTO(lærere);
             return lærereDTO;
         }
@@ -47,6 +47,17 @@ namespace Gymnasium.Persistence
                 lærereDTO.Add(lærerDTO);
             }
             return lærereDTO;
+        }
+
+        public static void SletLærer(Guid lærerId)
+        {
+            // 1. Open the table and find the record matching the lærerId
+            var context = new GymnasiumDbEntities();
+            var lærer = context.Lærer.Where(p => p.LærerId == lærerId).First();
+            // 2. Change the value of the deleted field to true
+            lærer.Deleted = true;
+            // 3. Save the changes
+            context.SaveChanges();
         }
     }
 }

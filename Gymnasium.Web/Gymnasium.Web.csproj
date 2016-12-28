@@ -107,6 +107,7 @@
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="slettedeFagListe.aspx" />
+    <Content Include="slettedeLærerListe.aspx" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
@@ -171,6 +172,13 @@
     </Compile>
     <Compile Include="slettedeFagListe.aspx.designer.cs">
       <DependentUpon>slettedeFagListe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="slettedeLærerListe.aspx.cs">
+      <DependentUpon>slettedeLærerListe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="slettedeLærerListe.aspx.designer.cs">
+      <DependentUpon>slettedeLærerListe.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
