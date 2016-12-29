@@ -25,5 +25,18 @@ namespace Gymnasium.Web
         {
             Response.Redirect("LærerListe.aspx");
         }
+
+        protected void slettedeLærereGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            // 1. Determine which row is clicked
+            var index = Convert.ToInt32(e.CommandArgument);
+            GridViewRow row = slettedeLærereGridView.Rows[index];
+            // 2. Determine the contents of the lærerId field
+            var value = row.Cells[0].Text.ToString();
+            var lærerId = Guid.Parse(value);
+            // 3. Call method to permanently delete the record with the above lærerId
+            Domain.LærerManager.SletLærerPermanent(lærerId);
+            refreshGridView();
+        }
     }
 }

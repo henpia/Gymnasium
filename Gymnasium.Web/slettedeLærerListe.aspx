@@ -15,12 +15,13 @@
             <p class="lead">Liste over Slettede Lærere</p>
         </div>
 
-        <asp:GridView CssClass="table table-bordered table-condensed table-hover table-responsive" ID="slettedeLærereGridView" runat="server" AutoGenerateColumns="false">
+        <asp:GridView CssClass="table table-bordered table-condensed table-hover table-responsive" ID="slettedeLærereGridView" runat="server" AutoGenerateColumns="false" OnRowCommand="slettedeLærereGridView_RowCommand">
             <Columns>
                 <asp:BoundField DataField="LærerId" HeaderText="Lærer ID" />
                 <asp:BoundField DataField="Cprnummer" HeaderText="CPR Nummer" />
                 <asp:BoundField DataField="Navn" HeaderText="Navn" />
                 <asp:BoundField DataField="Adresse" HeaderText="Adresse" />
+                <asp:ButtonField Text="Slet Permanent" />
             </Columns>
         </asp:GridView>
 

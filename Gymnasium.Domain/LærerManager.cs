@@ -30,5 +30,10 @@ namespace Gymnasium.Domain
         {
             return Persistence.LærerRepository.HentSlettedeLærere();
         }
+
+        public static void SletLærerPermanent(Guid lærerId)
+        {
+            Persistence.LærerRepository.SletLærerPermanent(lærerId);
+        }
     }
 }

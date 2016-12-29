@@ -62,11 +62,22 @@ namespace Gymnasium.Persistence
 
         public static List<DTO.LærerDTO> HentSlettedeLærere()
         {
-            // TODO: Implement retrieval of the list of deleted Lærere
             var context = new GymnasiumDbEntities();
             var slettedeLærere = context.Lærer.Where(p => p.Deleted == true).ToList();
             var slettedeLærereDTO = convertLærereToDTO(slettedeLærere);
             return slettedeLærereDTO;
+        }
+
+        public static void SletLærerPermanent(Guid lærerId)
+        {
+            // 1. Open a database connection
+            var context = new GymnasiumDbEntities();
+            // 2. Find the record to be deleted
+            var lærerToBeDeleted = context.Lærer.Where(p => p.LærerId == lærerId).First();
+            // 3. Remove the record
+            context.Lærer.Remove(lærerToBeDeleted);
+            // 4. Save the changes
+            context.SaveChanges();
         }
     }
 }
