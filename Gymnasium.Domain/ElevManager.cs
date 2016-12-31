@@ -19,5 +19,20 @@ namespace Gymnasium.Domain
             var elever = Persistence.ElevRepository.HentElever();
             return elever;
         }
+
+        public static void SletElev(Guid elevId)
+        {
+            Persistence.ElevRepository.SletElev(elevId);
+        }
+
+        public static List<DTO.ElevDTO> HentSlettedeElever()
+        {
+            return Persistence.ElevRepository.HentSlettedeElever();
+        }
+
+        public static void SletElevPermanently(Guid elevId)
+        {
+            Persistence.ElevRepository.SletElevvPermanently(elevId);
+        }
     }
 }

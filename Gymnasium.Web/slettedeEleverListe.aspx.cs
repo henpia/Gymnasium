@@ -7,39 +7,34 @@ using System.Web.UI.WebControls;
 
 namespace Gymnasium.Web
 {
-    public partial class ElevListe : System.Web.UI.Page
+    public partial class slettedeEleverListe : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             refreshGridView();
         }
 
-        protected void elevListeGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void slettedeEleverGridView_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             var index = Convert.ToInt32(e.CommandArgument);
-            GridViewRow row = elevListeGridView.Rows[index];
+            GridViewRow row = slettedeEleverGridView.Rows[index];
             var value = row.Cells[0].Text.ToString();
             var elevId = Guid.Parse(value);
-            Domain.ElevManager.SletElev(elevId);
+            Domain.ElevManager.SletElevPermanently(elevId);
             refreshGridView();
         }
 
         private void refreshGridView()
         {
-            var elever = Domain.ElevManager.HentElever();
-            elevListeGridView.DataSource = elever;
-            elevListeGridView.DataBind();
+            List<DTO.ElevDTO> slettedeElever = Domain.ElevManager.HentSlettedeElever();
+            slettedeEleverGridView.DataSource = slettedeElever;
+            slettedeEleverGridView.DataBind();
         }
 
         protected void tilbageButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Default.aspx");
+            Response.Redirect("ElevListe.aspx");
         }
 
-
-        protected void slettedeEleverButton_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("slettedeEleverListe.aspx");
-        }
     }
 }

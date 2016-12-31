@@ -14,6 +14,11 @@ namespace Gymnasium.Web
 
         }
 
+        protected void tilbageButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
+        }
+
         protected void opretFagButton_Click(object sender, EventArgs e)
         {
             var fagDTO = new DTO.FagDTO();
@@ -22,9 +27,5 @@ namespace Gymnasium.Web
             Domain.FagManager.OpretFag(fagDTO);
         }
 
-        protected void tilbageButton_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Default.aspx");
-        }
     }
 }

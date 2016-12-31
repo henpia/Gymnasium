@@ -10,7 +10,6 @@ namespace Gymnasium.Persistence
     {
         public static void OpretElev(DTO.ElevDTO elevDTO)
         {
-            // Open a new connecction to the database
             var db = new GymnasiumDbEntities();
             var elev = convertElevToEntity(elevDTO);
             db.Elevs.Add(elev);
@@ -30,9 +29,17 @@ namespace Gymnasium.Persistence
         public static List<DTO.ElevDTO> HentElever()
         {
             var db = new GymnasiumDbEntities();
-            var elever = db.Elevs.ToList();
+            var elever = db.Elevs.Where(p => p.Deleted == false).ToList();
             var eleverDTO = convertEleverToDTOList(elever);
             return eleverDTO;
+        }
+
+        public static List<DTO.ElevDTO> HentSlettedeElever()
+        {
+            var context = new GymnasiumDbEntities();
+            var slettedeElever = context.Elevs.Where(p => p.Deleted == true).ToList();
+            var slettedeEleverDTO = convertEleverToDTOList(slettedeElever);
+            return slettedeEleverDTO;
         }
 
         private static List<DTO.ElevDTO> convertEleverToDTOList(List<Elev> elever)
@@ -49,6 +56,22 @@ namespace Gymnasium.Persistence
             }
             return elevListDTO;
         }
-    
+
+        public static void SletElev(Guid elevId)
+        {
+            var context = new GymnasiumDbEntities();
+            var elevToDelete = context.Elevs.Where(p => p.ElevId == elevId).First();
+            elevToDelete.Deleted = true;
+            context.SaveChanges();
+        }
+
+
+        public static void SletElevvPermanently(Guid elevId)
+        {
+            var context = new GymnasiumDbEntities();
+            var elevToDelete = context.Elevs.Where(p => p.ElevId == elevId).First();
+            context.Elevs.Remove(elevToDelete);
+            context.SaveChanges();
+        }
     }
 }

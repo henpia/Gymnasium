@@ -34,6 +34,14 @@ namespace Gymnasium.Persistence
             return lærereDTO;
         }
 
+        public static List<DTO.LærerDTO> HentSlettedeLærere()
+        {
+            var context = new GymnasiumDbEntities();
+            var slettedeLærere = context.Lærer.Where(p => p.Deleted == true).ToList();
+            var slettedeLærereDTO = convertLærereToDTO(slettedeLærere);
+            return slettedeLærereDTO;
+        }
+
         private static List<DTO.LærerDTO> convertLærereToDTO(List<Lærer> lærere)
         {
             var lærereDTO = new List<DTO.LærerDTO>();
@@ -51,32 +59,17 @@ namespace Gymnasium.Persistence
 
         public static void SletLærer(Guid lærerId)
         {
-            // 1. Open the table and find the record matching the lærerId
             var context = new GymnasiumDbEntities();
             var lærer = context.Lærer.Where(p => p.LærerId == lærerId).First();
-            // 2. Change the value of the deleted field to true
             lærer.Deleted = true;
-            // 3. Save the changes
             context.SaveChanges();
-        }
-
-        public static List<DTO.LærerDTO> HentSlettedeLærere()
-        {
-            var context = new GymnasiumDbEntities();
-            var slettedeLærere = context.Lærer.Where(p => p.Deleted == true).ToList();
-            var slettedeLærereDTO = convertLærereToDTO(slettedeLærere);
-            return slettedeLærereDTO;
         }
 
         public static void SletLærerPermanent(Guid lærerId)
         {
-            // 1. Open a database connection
             var context = new GymnasiumDbEntities();
-            // 2. Find the record to be deleted
             var lærerToBeDeleted = context.Lærer.Where(p => p.LærerId == lærerId).First();
-            // 3. Remove the record
             context.Lærer.Remove(lærerToBeDeleted);
-            // 4. Save the changes
             context.SaveChanges();
         }
     }

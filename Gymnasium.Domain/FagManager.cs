@@ -10,7 +10,6 @@ namespace Gymnasium.Domain
     {
         public static void OpretFag(DTO.FagDTO fagDTO)
         {
-            //fagDTO.FagId = Guid.NewGuid();
             Persistence.FagRepository.OpretFag(fagDTO);
         }
 
@@ -29,7 +28,6 @@ namespace Gymnasium.Domain
         {
             return Persistence.FagRepository.HentSlettedeFag();
         }
-
 
         public static void SletFagPermanent(int fagId)
         {

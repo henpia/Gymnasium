@@ -14,6 +14,16 @@ namespace Gymnasium.Web
             refreshGridView();
         }
 
+        protected void lærerListeGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            var index = Convert.ToInt32(e.CommandArgument);
+            GridViewRow row = lærerListeGridView.Rows[index];
+            var value = row.Cells[0].Text.ToString();
+            var lærerId = Guid.Parse(value);
+            Domain.LærerManager.SletLærer(lærerId);
+            refreshGridView();
+        }
+
         private void refreshGridView()
         {
             var lærere = Domain.LærerManager.HentLærere();
@@ -26,15 +36,6 @@ namespace Gymnasium.Web
             Response.Redirect("Default.aspx");
         }
 
-        protected void lærerListeGridView_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            var index = Convert.ToInt32(e.CommandArgument);
-            GridViewRow row = lærerListeGridView.Rows[index];
-            var value = row.Cells[0].Text.ToString();
-            var lærerId = Guid.Parse(value);
-            Domain.LærerManager.SletLærer(lærerId);
-            refreshGridView();
-        }
 
         protected void slettedeLærerButton_Click(object sender, EventArgs e)
         {

@@ -14,7 +14,12 @@
         <h1>Udby Gymnasium</h1>
         <p class="lead">Liste over Lærere</p>
         </div>
-        <asp:GridView CssClass="table table-bordered table-condensed table-hover table-responsive" ID="lærerListeGridView" runat="server" AutoGenerateColumns="False" OnRowCommand="lærerListeGridView_RowCommand">
+        <asp:GridView 
+            CssClass="table table-bordered table-condensed table-hover table-responsive" 
+            ID="lærerListeGridView" 
+            runat="server" 
+            AutoGenerateColumns="False" 
+            OnRowCommand="lærerListeGridView_RowCommand">
             <Columns>
                 <asp:BoundField DataField="LærerId" HeaderText="Lærer ID" />
                 <asp:BoundField DataField="CprNummer" HeaderText="Cpr Nummer" />
@@ -23,6 +28,7 @@
                 <asp:ButtonField Text="Slet" />
             </Columns>
         </asp:GridView>
+
         <p>&nbsp;</p>
         <asp:Button CssClass="btn btn-lg btn-primary" ID="tilbageButton" runat="server" Text="Tilbage" OnClick="tilbageButton_Click" />
         &nbsp;

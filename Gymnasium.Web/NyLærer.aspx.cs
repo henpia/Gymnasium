@@ -22,17 +22,9 @@ namespace Gymnasium.Web
         protected void opretLærerButton_Click(object sender, EventArgs e)
         {
             var lærerDTO = new DTO.LærerDTO();
-
             lærerDTO.CprNummer = cprNummerTextBox.Text.Trim();
             lærerDTO.Navn = navnTextBox.Text.Trim();
             lærerDTO.Adresse = adresseTextBox.Text.Trim();
-
-            /*
-            lærerDTO.CprNummer = "231266-1234";
-            lærerDTO.Navn = "Søren Sørensen";
-            lærerDTO.Adresse = "Vejlands Alle 99";
-            lærerDTO.FagId = Guid.NewGuid();
-             */
             Domain.LærerManager.OpretLærer(lærerDTO);
         }
     }
