@@ -1,0 +1,137 @@
+[33mcommit 0c9a1466760e0218605460dae5402c6db332de2e[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Sun Dec 4 11:49:08 2016 +0100
+
+    Implemented Deleted column in each table.
+
+[33mcommit 2acc12af11919f81604caae31084d55a42690a16[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Sun Dec 4 10:10:42 2016 +0100
+
+    Removed the FagId from the Lærer table and adjusted code accordingly.
+
+[33mcommit 4a947d93db6f41cf03c242516ec68bdd3e3cca55[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Sat Dec 3 17:34:05 2016 +0100
+
+    Fag - Changed button placement on FagListe.
+
+[33mcommit 8a6cf98db910a1a86245374840fea457206bcaaf[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Sat Dec 3 17:30:29 2016 +0100
+
+    Fag - ListFag implemented.
+
+[33mcommit c2749a9d14e267280477eea657a55fd08768768e[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Thu Dec 1 20:51:25 2016 +0100
+
+    Fag - OpretFag implemented in all layers - hardcoded data in Web layer.
+
+[33mcommit 54d7b68c613457a5592217b6f7c6e43c204231ea[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Thu Dec 1 07:22:03 2016 +0100
+
+    Fag - OpretFag in Persistence implemented.
+
+[33mcommit 1c36960cd824c3e997b81839a7b1c520d0271f85[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Wed Nov 30 07:39:31 2016 +0100
+
+    Fag - DB and Entity data model created.
+
+[33mcommit 9c7c8b0f00a635b0e51227b01fce235f404ceae3[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Sun Nov 27 19:39:20 2016 +0100
+
+    Elev. Implemented List of Elever.
+
+[33mcommit fe2f8d9ea3c44910fae13ddabdcd1f1035b06354[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Sun Nov 27 10:59:38 2016 +0100
+
+    Elev. Liste. Setup up page template for the list.
+
+[33mcommit 0c32094d893d36cfee54f3fca8af89abf1f3fcd8[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Sun Nov 27 09:24:59 2016 +0100
+
+    Elev. Implemented OpretElev feature. Deleted Master button.
+
+[33mcommit faa75365c13cd8eff4019dec4e5e898468103a6a[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Sun Nov 27 09:16:58 2016 +0100
+
+    Elev. Implemented 'OpretElev' Feature.
+
+[33mcommit b315598ca7bdd56f6f92af2f49020b7d837f9694[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Sat Nov 26 16:13:04 2016 +0100
+
+    Elev.Repository OpretElev
+
+[33mcommit 8ba18a0077c84a0d54e8d15ff5fbc582716670d4[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Sat Nov 26 15:30:15 2016 +0100
+
+    Elev.Persistence Repository templ.
+
+[33mcommit 7fc3043d678121e644bbc6f2f9067d046ba4a8f9[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Sat Nov 26 13:34:00 2016 +0100
+
+    Implemented Template for Nyt Fag.
+
+[33mcommit fa202261efe6c9a1bfc0900185e2ee0842a343ed[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Sat Nov 26 12:39:54 2016 +0100
+
+    Template for Ny Elev page implemented.
+
+[33mcommit 157a654c053a7b6161bd85231fcce32b1e971045[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Sat Nov 26 09:55:17 2016 +0100
+
+    Template for Ny Elev side
+
+[33mcommit 1600bf0e4f194e427f48167aa7712dc0c3d5b8cf[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Sat Nov 26 09:30:24 2016 +0100
+
+    Ny Elev Button
+
+[33mcommit a6367142d280b82dfd58f6053fe0362114fe4cb2[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Sat Nov 26 08:57:56 2016 +0100
+
+    Up to date
+
+[33mcommit 6877f2a3c3312465b32fecabc56f0acc3c3bcb6e[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Sat Nov 26 08:54:19 2016 +0100
+
+    Removed test button.
+
+[33mcommit 284eeb510953c53732df21e969afe360833956cb[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Wed Nov 23 19:36:36 2016 +0100
+
+    Changed connecction string
+
+[33mcommit dbabf696939e8509c454d74ebfc5a715cb2b9851[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Wed Nov 23 18:39:59 2016 +0100
+
+    Added Button
+
+[33mcommit 47687dd903f1b10d3249e339619b95d45ff075f5[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Wed Nov 23 18:26:37 2016 +0100
+
+    Initial Commit
+
+[33mcommit bff22b067410982fd146fa7516857b26ef7118b0[m
+Author: Henrik Christiansen <henpia@gmail.com>
+Date:   Wed Nov 23 18:24:31 2016 +0100
+
+    Initial commit to add default .gitIgnore and .gitAttribute files.

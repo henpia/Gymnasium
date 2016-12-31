@@ -10,7 +10,7 @@
 namespace Gymnasium.Web {
     
     
-    public partial class LærerListe {
+    public partial class slettedeLærerListe {
         
         /// <summary>
         /// form1 control.
@@ -22,13 +22,13 @@ namespace Gymnasium.Web {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lærerListeGridView control.
+        /// slettedeLærereGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView lærerListeGridView;
+        protected global::System.Web.UI.WebControls.GridView slettedeLærereGridView;
         
         /// <summary>
         /// tilbageButton control.
@@ -38,14 +38,5 @@ namespace Gymnasium.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button tilbageButton;
-        
-        /// <summary>
-        /// slettedeLærerButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button slettedeLærerButton;
     }
 }

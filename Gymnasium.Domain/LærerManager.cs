@@ -18,5 +18,20 @@ namespace Gymnasium.Domain
         {
             return Persistence.LærerRepository.HentLærere();
         }
+
+        public static void SletLærer(Guid lærerId)
+        {
+            Persistence.LærerRepository.SletLærer(lærerId);
+        }
+
+        public static List<DTO.LærerDTO> HentSlettedeLærere()
+        {
+            return Persistence.LærerRepository.HentSlettedeLærere();
+        }
+
+        public static void SletLærerPermanent(Guid lærerId)
+        {
+            Persistence.LærerRepository.SletLærerPermanent(lærerId);
+        }
     }
 }

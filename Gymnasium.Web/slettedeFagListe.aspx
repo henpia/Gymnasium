@@ -15,7 +15,12 @@
             <div class="lead">Liste over Slettede Fag</div> 
         </div>
 
-        <asp:GridView ID="slettedeFagGridView" runat="server" AutoGenerateColumns="False" OnRowCommand="slettedeFagGridView_RowCommand">
+        <asp:GridView 
+            CssClass="table table-hover table-bordered table-condensed table-responsive" 
+            ID="slettedeFagGridView" 
+            runat="server" 
+            AutoGenerateColumns="False" 
+            OnRowCommand="slettedeFagGridView_RowCommand">
             <Columns>
                 <asp:BoundField DataField="FagId" HeaderText="Fag Id" />
                 <asp:BoundField DataField="Navn" HeaderText="Navn" />
@@ -24,6 +29,7 @@
             </Columns>
         </asp:GridView>
 
+        <p>&nbsp;</p>
         <asp:Button CssClass="btn btn-lg btn-primary" ID="tilbageButton" runat="server" Text="Tilbage" OnClick="tilbageButton_Click" />
     
     </div>

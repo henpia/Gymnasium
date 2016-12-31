@@ -106,7 +106,9 @@
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="slettedeEleverListe.aspx" />
     <Content Include="slettedeFagListe.aspx" />
+    <Content Include="slettedeLærerListe.aspx" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
@@ -165,12 +167,26 @@
       <DependentUpon>NytFag.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="slettedeEleverListe.aspx.cs">
+      <DependentUpon>slettedeEleverListe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="slettedeEleverListe.aspx.designer.cs">
+      <DependentUpon>slettedeEleverListe.aspx</DependentUpon>
+    </Compile>
     <Compile Include="slettedeFagListe.aspx.cs">
       <DependentUpon>slettedeFagListe.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="slettedeFagListe.aspx.designer.cs">
       <DependentUpon>slettedeFagListe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="slettedeLærerListe.aspx.cs">
+      <DependentUpon>slettedeLærerListe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="slettedeLærerListe.aspx.designer.cs">
+      <DependentUpon>slettedeLærerListe.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

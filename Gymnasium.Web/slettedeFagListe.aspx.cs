@@ -11,11 +11,24 @@ namespace Gymnasium.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Bind the GridView to a list of deleted/slettede fag.
-            // 1. get a list of Fag (deleted) to display
+            refreshGridView();
+        }
+
+        protected void slettedeFagGridView_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int index = Convert.ToInt32(e.CommandArgument);
+            GridViewRow row = slettedeFagGridView.Rows[index];
+            var value = row.Cells[0].Text.ToString();
+            var fagId = int.Parse(value);
+            Domain.FagManager.SletFagPermanent(fagId);
+            refreshGridView();
+        }
+
+        private void refreshGridView()
+        {
             var slettedeFagListe = Domain.FagManager.HentSlettedeFag();
-            // 2. set the source of the gridview to the list of fag from above
-            // 3. bind the source to the gridview
+            slettedeFagGridView.DataSource = slettedeFagListe;
+            slettedeFagGridView.DataBind();
         }
 
         protected void tilbageButton_Click(object sender, EventArgs e)
@@ -23,9 +36,5 @@ namespace Gymnasium.Web
             Response.Redirect("FagListe.aspx");
         }
 
-        protected void slettedeFagGridView_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-            // Determine which row is clicked
-        }
     }
 }

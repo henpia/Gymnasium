@@ -27,14 +27,18 @@ namespace Gymnasium.Persistence
 
         public static List<DTO.FagDTO> HentFag()
         {
-            // open database
             var db = new GymnasiumDbEntities();
-            // get all the records in the database that is not deleted and put it in a list
             List<Fag> fagListe = db.Fags.Where(p => p.Deleted == false).ToList();
-            // convert the list of fag to a list of DTO's
             List<DTO.FagDTO> listFagDTO = convertFagListeToDTO(fagListe);
-            // return the list of Fag DTO's to caller
             return listFagDTO;
+        }
+
+        public static List<DTO.FagDTO> HentSlettedeFag()
+        {
+            var context = new GymnasiumDbEntities();
+            var slettedeFag = context.Fags.Where(p => p.Deleted == true).ToList();
+            List<DTO.FagDTO> slettedeFagDTO = convertFagListeToDTO(slettedeFag);
+            return slettedeFagDTO;
         }
 
         private static List<DTO.FagDTO> convertFagListeToDTO(List<Fag> fagListe)
@@ -51,13 +55,19 @@ namespace Gymnasium.Persistence
             return fagListeDTO;
         }
 
-
-
         public static void SletFag(int fagId)
         {
             var context = new GymnasiumDbEntities();
             var fag = context.Fags.FirstOrDefault(p => p.FagId == fagId);
             fag.Deleted = true;
+            context.SaveChanges();
+        }
+
+        public static void SletFagPermanent(int fagId)
+        {
+            var context = new GymnasiumDbEntities();
+            var fagToDelete = context.Fags.Where(p => p.FagId==fagId).First();
+            context.Fags.Remove(fagToDelete);
             context.SaveChanges();
         }
     }
