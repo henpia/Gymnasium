@@ -57,7 +57,7 @@ namespace Gymnasium.Persistence
             return lærereDTO;
         }
 
-        public static void SletLærer(Guid lærerId)
+        public static void SletLærer(int lærerId)
         {
             var context = new GymnasiumDbEntities();
             var lærer = context.Lærer.Where(p => p.LærerId == lærerId).First();
@@ -65,7 +65,7 @@ namespace Gymnasium.Persistence
             context.SaveChanges();
         }
 
-        public static void SletLærerPermanent(Guid lærerId)
+        public static void SletLærerPermanent(int lærerId)
         {
             var context = new GymnasiumDbEntities();
             var lærerToBeDeleted = context.Lærer.Where(p => p.LærerId == lærerId).First();

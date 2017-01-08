@@ -19,7 +19,7 @@ namespace Gymnasium.Web
             var index = Convert.ToInt32(e.CommandArgument);
             GridViewRow row = elevListeGridView.Rows[index];
             var value = row.Cells[0].Text.ToString();
-            var elevId = Guid.Parse(value);
+            var elevId = int.Parse(value);
             Domain.ElevManager.SletElev(elevId);
             refreshGridView();
         }

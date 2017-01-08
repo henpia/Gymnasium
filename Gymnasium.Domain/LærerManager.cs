@@ -10,7 +10,7 @@ namespace Gymnasium.Domain
     {
         public static void OpretLærer(DTO.LærerDTO lærerDTO)
         {
-            lærerDTO.LærerId = Guid.NewGuid();
+            // lærerDTO.LærerId = Guid.NewGuid();
             Persistence.LærerRepository.OpretLærer(lærerDTO);
         }
 
@@ -19,7 +19,7 @@ namespace Gymnasium.Domain
             return Persistence.LærerRepository.HentLærere();
         }
 
-        public static void SletLærer(Guid lærerId)
+        public static void SletLærer(int lærerId)
         {
             Persistence.LærerRepository.SletLærer(lærerId);
         }
@@ -29,7 +29,7 @@ namespace Gymnasium.Domain
             return Persistence.LærerRepository.HentSlettedeLærere();
         }
 
-        public static void SletLærerPermanent(Guid lærerId)
+        public static void SletLærerPermanent(int lærerId)
         {
             Persistence.LærerRepository.SletLærerPermanent(lærerId);
         }

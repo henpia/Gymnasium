@@ -57,7 +57,7 @@ namespace Gymnasium.Persistence
             return elevListDTO;
         }
 
-        public static void SletElev(Guid elevId)
+        public static void SletElev(int elevId)
         {
             var context = new GymnasiumDbEntities();
             var elevToDelete = context.Elevs.Where(p => p.ElevId == elevId).First();
@@ -66,7 +66,7 @@ namespace Gymnasium.Persistence
         }
 
 
-        public static void SletElevvPermanently(Guid elevId)
+        public static void SletElevvPermanently(int elevId)
         {
             var context = new GymnasiumDbEntities();
             var elevToDelete = context.Elevs.Where(p => p.ElevId == elevId).First();

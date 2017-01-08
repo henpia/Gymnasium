@@ -19,7 +19,7 @@ namespace Gymnasium.Web
             var index = Convert.ToInt32(e.CommandArgument);
             GridViewRow row = lærerListeGridView.Rows[index];
             var value = row.Cells[0].Text.ToString();
-            var lærerId = Guid.Parse(value);
+            var lærerId = int.Parse(value);
             Domain.LærerManager.SletLærer(lærerId);
             refreshGridView();
         }

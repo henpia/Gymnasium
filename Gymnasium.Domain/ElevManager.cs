@@ -10,7 +10,7 @@ namespace Gymnasium.Domain
     {
         public static void OpretElev(DTO.ElevDTO elevDTO)
         {
-            elevDTO.ElevId = Guid.NewGuid();
+            // elevDTO.ElevId = Guid.NewGuid();
             Persistence.ElevRepository.OpretElev(elevDTO);
         }
 
@@ -20,7 +20,7 @@ namespace Gymnasium.Domain
             return elever;
         }
 
-        public static void SletElev(Guid elevId)
+        public static void SletElev(int elevId)
         {
             Persistence.ElevRepository.SletElev(elevId);
         }
@@ -30,7 +30,7 @@ namespace Gymnasium.Domain
             return Persistence.ElevRepository.HentSlettedeElever();
         }
 
-        public static void SletElevPermanently(Guid elevId)
+        public static void SletElevPermanently(int elevId)
         {
             Persistence.ElevRepository.SletElevvPermanently(elevId);
         }

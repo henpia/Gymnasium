@@ -8,7 +8,7 @@ namespace Gymnasium.DTO
 {
     public class LærerDTO
     {
-        public System.Guid LærerId { get; set; }
+        public int LærerId { get; set; }
         public string CprNummer { get; set; }
         public string Navn { get; set; }
         public string Adresse { get; set; }

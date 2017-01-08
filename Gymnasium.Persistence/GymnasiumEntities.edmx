@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="ElevId" />
           </Key>
-          <Property Name="ElevId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ElevId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CprNummer" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Navn" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Adresse" Type="nvarchar" MaxLength="250" Nullable="false" />
@@ -28,7 +28,7 @@
           <Key>
             <PropertyRef Name="LærerId" />
           </Key>
-          <Property Name="LærerId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LærerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CprNummer" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Navn" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Adresse" Type="nvarchar" MaxLength="250" Nullable="false" />
@@ -47,7 +47,7 @@
           <Key>
             <PropertyRef Name="LærerId" />
           </Key>
-          <Property Name="LærerId" Type="Guid" Nullable="false" />
+          <Property Name="LærerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" />
           <Property Name="CprNummer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Navn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Adresse" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
@@ -62,7 +62,7 @@
           <Key>
             <PropertyRef Name="ElevId" />
           </Key>
-          <Property Name="ElevId" Type="Guid" Nullable="false" />
+          <Property Name="ElevId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" />
           <Property Name="CprNummer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Navn" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Adresse" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
@@ -86,8 +86,8 @@
           <EntitySetMapping Name="Lærer">
             <EntityTypeMapping TypeName="GymnasiumDbModel.Lærer">
               <MappingFragment StoreEntitySet="Lærer">
-                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
                 <ScalarProperty Name="LærerId" ColumnName="LærerId" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
                 <ScalarProperty Name="CprNummer" ColumnName="CprNummer" />
                 <ScalarProperty Name="Navn" ColumnName="Navn" />
                 <ScalarProperty Name="Adresse" ColumnName="Adresse" />
@@ -97,11 +97,11 @@
           <EntitySetMapping Name="Elevs">
             <EntityTypeMapping TypeName="GymnasiumDbModel.Elev">
               <MappingFragment StoreEntitySet="Elev">
+                <ScalarProperty Name="ElevId" ColumnName="ElevId" />
                 <ScalarProperty Name="Deleted" ColumnName="Deleted" />
                 <ScalarProperty Name="Adresse" ColumnName="Adresse" />
                 <ScalarProperty Name="Navn" ColumnName="Navn" />
                 <ScalarProperty Name="CprNummer" ColumnName="CprNummer" />
-                <ScalarProperty Name="ElevId" ColumnName="ElevId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
