@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Gymnasium.DTO
 {
     public class ElevDTO
-    {
+    { // test
         public int ElevId { get; set; }
         public string CprNummer { get; set; }
         public string Navn { get; set; }
